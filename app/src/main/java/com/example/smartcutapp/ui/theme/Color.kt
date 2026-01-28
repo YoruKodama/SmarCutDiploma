@@ -1,11 +1,26 @@
-package com.example.smartcutapp.ui.theme
+package com.example.smartcutapp.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+object SmartCutColors {
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+    val Background = Color(0xFF1A1A1A)
+
+    val CardBackground = Color(0xFF2A1810)
+
+
+    val Primary = Color(0xFFFF8C42)
+    val Secondary = Color(0xFFFF9B6B)
+
+
+    val Success = Color(0xFF4CAF50)
+    val Disconnected = Color(0xFF757575)
+
+
+    val TextPrimary = Color(0xFFFF8C42)
+    val TextSecondary = Color(0xB3FF8C42)
+    val OnPrimary = Color(0xFFFFFFFF)
+
+
+    val Alpha20 = Color(0x33FF8C42)
+}
