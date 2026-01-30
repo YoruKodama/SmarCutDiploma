@@ -6,8 +6,10 @@ plugins {
 
 android {
     namespace = "com.example.smartcutapp"
-    compileSdk {
-        version = release(36)
+    compileSdk = 36
+
+    buildFeatures {
+        compose = true
     }
 
     defaultConfig {
@@ -29,15 +31,14 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
     }
 }
 
@@ -50,11 +51,33 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
+    // Добавленные зависимости:
+    // BOM управляет версиями Compose автоматически
+    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+
+    // Базовый UI Compose
+    implementation("androidx.compose.ui:ui")
+
+    // Material 3 (кнопки, текст, топбары)
+    implementation("androidx.compose.material3:material3")
+
+    // Preview в Android Studio
+    implementation("androidx.compose.ui:ui-tooling-preview")
+
+    // Доп иконки
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
+
+    // Для @Preview
+    debugImplementation("androidx.compose.ui:ui-tooling")
+
+    // Интеграция Compose с Activity
+    implementation("androidx.activity:activity-compose:1.8.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
