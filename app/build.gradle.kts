@@ -45,6 +45,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycleViewmodelCompose)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
@@ -52,27 +53,11 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation("androidx.compose.material:material-icons-extended:1.7.6")
-    // Добавленные зависимости:
-    // BOM управляет версиями Compose автоматически
-    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
 
-    // Базовый UI Compose
-    implementation("androidx.compose.ui:ui")
+    implementation("io.coil-kt.coil3:coil-compose:3.3.0")
+    implementation("io.coil-kt.coil3:coil-network-ktor3:3.3.0")
 
-    // Material 3 (кнопки, текст, топбары)
-    implementation("androidx.compose.material3:material3")
-
-    // Preview в Android Studio
-    implementation("androidx.compose.ui:ui-tooling-preview")
-
-    // Доп иконки
-    implementation("androidx.compose.material:material-icons-extended:1.7.8")
-
-    // Для @Preview
-    debugImplementation("androidx.compose.ui:ui-tooling")
-
-    // Интеграция Compose с Activity
-    implementation("androidx.activity:activity-compose:1.8.1")
+    debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
